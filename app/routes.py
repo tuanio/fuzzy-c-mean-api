@@ -13,6 +13,7 @@ def index():
 @cross_origin()
 def get_recommend():
     scores_dict = request.get_json(force=True)
+    scores_dict = {k: float(v) for k, v in scores_dict.items()}
 
     mmt = get_model('mmt', scores_dict)
     cnpm = get_model('cnpm', scores_dict)
