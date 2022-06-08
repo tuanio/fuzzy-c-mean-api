@@ -26,7 +26,6 @@ def get_model(major, scores_dict):
         subj = ['kiến trúc máy tính', 'mạng máy tính', 'nhập môn lập trình', 'hệ điều hành']
     
     scores = np.array([[np.nan if isinstance(scores_dict[i], str) else scores_dict[i] for i in subj]])
-    print(scores)
 
     with open(f'models/{major}.model', 'rb') as f:
         model = pickle.load(f)

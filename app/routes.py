@@ -1,13 +1,16 @@
 from app import app
 from app.utils import make_response, get_model
+from flask_cors import cross_origin
 from flask import request
 import numpy as np
 
 @app.route('/')
+@cross_origin()
 def index():
     return make_response(dict(data="Home"))
 
 @app.route('/get-recommend', methods=['GET', 'POST'])
+@cross_origin()
 def get_recommend():
     scores_dict = request.get_json(force=True)
 
