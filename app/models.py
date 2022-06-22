@@ -10,7 +10,7 @@ class ChuyenNganh(db.Model):
     __tablename__ = "chuyennganh"
     cn_id = db.Column(db.Integer, primary_key=True)
     ten_cn = db.Column(db.String(255))
-    kdt_id = db.Column(db.String(255), db.ForeignKey("khoadaotao.kdt_id"))
+    kdt_id = db.Column(db.Integer, db.ForeignKey("khoadaotao.kdt_id"))
 
 
 class ChuongTrinhDaoTao(db.Model):
