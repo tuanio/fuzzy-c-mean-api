@@ -4,12 +4,14 @@ from flask_cors import cross_origin
 from flask import request
 import numpy as np
 
+from .db_routes import *
+
 @app.route('/')
 @cross_origin()
 def index():
     return make_response(dict(data="Home"))
 
-@app.route('/get-recommend', methods=['GET', 'POST'])
+@app.route('/api/get-recommend', methods=['GET', 'POST'])
 @cross_origin()
 def get_recommend():
     scores_dict = request.get_json(force=True)

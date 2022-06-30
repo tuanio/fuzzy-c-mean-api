@@ -56,3 +56,7 @@ Bảng:
     + id chuyên ngành: 1
     + id chương trình đào tạo
     + id của môn cần xét: id của môn nhập môn lập trình, id của môn toán rời rạc
+
+# Set environment
+
+- Powershell: `$env:DATABASE_URL = "postgresql://postgres:TSnXnLIazWq1U6r4ds3G@containers-us-west-58.railway.app:7485/railway"`

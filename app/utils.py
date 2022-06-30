@@ -1,6 +1,32 @@
 from flask import jsonify
 import pickle
 import numpy as np
+from .models import *
+
+list_table_names = [
+    'khoadaotao',
+    'chuyennganh',
+    'chuongtrinhdaotao',
+    'sinhvien',
+    'diemsinhvien',
+    'chitietmonhoctheochuyennganh',
+    'diemtuvan',
+    'nguoidung'
+]
+
+list_table_objects = [
+    KhoaDaoTao,
+    ChuyenNganh,
+    ChuongTrinhDaoTao,
+    SinhVien,
+    DiemSinhVien,
+    ChiTietMonHocTheoChuyenNganh,
+    DiemTuVan,
+    NguoiDung
+]
+
+map_table = dict(zip(list_table_names, list_table_objects))
+
 
 def make_response(data={}, status=200):
     '''
@@ -33,3 +59,7 @@ def get_model(major, scores_dict):
 
     probability = model.soft_predict(scores).reshape(-1)[1] * 100
     return round(probability, 2)
+
+def make_data(data: dict = dict(), msg: str = "", status: str = "SUCCESS") -> dict:
+    ret_data = dict(data=data, msg=msg, status_code=status_code[status])
+    return ret_data
