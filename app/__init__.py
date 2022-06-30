@@ -17,10 +17,10 @@ port = os.environ["PGPORT"]
 uri = os.environ["DATABASE_URL"]
 
 # local config database
-app.config[
-    "SQLALCHEMY_DATABASE_URI"
-] = f"postgresql://{username}:{password}@{host}:{port}/{db_name}"
-# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:e9Jx7sXB4UAW1rZHZOLF@containers-us-west-75.railway.app:7285/railway"
+# app.config[
+#     "SQLALCHEMY_DATABASE_URI"
+# ] = f"postgresql://{username}:{password}@{host}:{port}/{db_name}"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:e9Jx7sXB4UAW1rZHZOLF@containers-us-west-75.railway.app:7285/railway"
 
 db = SQLAlchemy(app)
 
