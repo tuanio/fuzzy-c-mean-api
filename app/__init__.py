@@ -9,12 +9,12 @@ CORS(app, resources={r"*": {"origins": "https://fuzzy-c-mean-fe.vercel.app"}}) #
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-username = os.environ["PGUSER"]
-password = os.environ["PGPASSWORD"]
-db_name = os.environ["PGDATABASE"]
-host = os.environ["PGHOST"]
-port = os.environ["PGPORT"]
-uri = os.environ["DATABASE_URL"]
+# username = os.environ["PGUSER"]
+# password = os.environ["PGPASSWORD"]
+# db_name = os.environ["PGDATABASE"]
+# host = os.environ["PGHOST"]
+# port = os.environ["PGPORT"]
+# uri = os.environ["DATABASE_URL"]
 
 # local config database
 # app.config[
