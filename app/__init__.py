@@ -20,7 +20,7 @@ uri = os.environ["DATABASE_URL"]
 # app.config[
 #     "SQLALCHEMY_DATABASE_URI"
 # ] = f"postgresql://{username}:{password}@{host}:{port}/{db_name}"
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ('DATABASE_URL', None)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', None)
 
 db = SQLAlchemy(app)
 
