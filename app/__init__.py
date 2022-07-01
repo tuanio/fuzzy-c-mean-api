@@ -31,5 +31,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', None)
 
 db = SQLAlchemy(app)
 
+status_code = dict(SUCCESS=1, FAILURE=0)
+
 from app.routes import *
 from app.utils import *
