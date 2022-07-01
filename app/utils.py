@@ -2,6 +2,7 @@ from flask import jsonify
 import pickle
 import numpy as np
 from .models import *
+from app import status_code
 
 list_majors = ['mmt', 'cnpm', 'khptdl', 'httt']
 
@@ -127,3 +128,8 @@ def get_distance(major, scores_dict, kdt_id):
 def make_data(data: dict = dict(), msg: str = "", status: str = "SUCCESS") -> dict:
     ret_data = dict(data=data, msg=msg, status_code=status_code[status])
     return ret_data
+
+def get_data(data):
+    data = vars(data)
+    del data['_sa_instance_state']
+    return data
