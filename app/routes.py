@@ -73,3 +73,13 @@ def get_recommend():
     ret = dict(zip(list_majors, distances))
 
     return make_response(ret)
+
+@app.route('/api/authorize/<path:username>/<path:password>', methods=['GET'])
+@cross_origin()
+def authorize(username: str, password: str):
+    user = NguoiDung.query.first()
+    flag = False
+    if user.username == username and user.password == password:
+        flag = True
+    
+    return make_response(dict(is_okay=flag))
