@@ -42,7 +42,6 @@ def update(table_name: str):
 
         data = table.query.filter_by(id=update_data.get('id'))
         
-        del update_data['id']
         data.update(update_data)
         
         db.session.commit()
