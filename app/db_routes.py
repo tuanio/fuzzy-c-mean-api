@@ -19,7 +19,7 @@ def get_one(table_name: str, id: int):
     
     return make_response(make_data(data=data, msg="Successfully!"))
 
-@app.route('/api/db/get-one/<path:table_name>', methods=['GET'])
+@app.route('/api/db/get-all/<path:table_name>', methods=['GET'])
 @cross_origin()
 def get_all(table_name: str):
     try:
