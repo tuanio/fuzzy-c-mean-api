@@ -1,5 +1,5 @@
 from app import app
-from app.utils import make_response, map_table, make_data
+from app.utils import make_response, map_table, make_data, get_data
 from flask_cors import cross_origin
 from flask import request
 import numpy as np
@@ -11,7 +11,7 @@ def get_one(table_name: str, id: int):
     try:
         table = map_table[table_name]
         data = table.query.filter_by(id=id).first()
-        data = vars(data)
+        data = get_data(data)
     except Exception as e:
         return make_response(
             make_data(dict(error=str(e)), msg="Fail!", status="FAILURE")
@@ -25,7 +25,7 @@ def get_all(table_name: str):
     try:
         table = map_table[table_name]
         data = table.query.all()
-        data = list(map(vars, data))
+        data = list(map(get_data, data))
     except Exception as e:
         return make_response(
             make_data(dict(error=str(e)), msg="Fail!", status="FAILURE")

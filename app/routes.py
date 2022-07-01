@@ -4,7 +4,8 @@ from app.utils import (
     get_model_fuzzy_c_mean,
     map_subjects,
     get_distance,
-    list_majors
+    list_majors,
+    get_data
 )
 from app.models import *
 from flask_cors import cross_origin
