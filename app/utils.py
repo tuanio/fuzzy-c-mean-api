@@ -2,6 +2,7 @@ from flask import jsonify
 import pickle
 import numpy as np
 from .models import *
+from app import status_code
 
 list_majors = ['mmt', 'cnpm', 'khptdl', 'httt']
 
