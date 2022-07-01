@@ -1,4 +1,4 @@
-from app import app
+from app import app, db
 from app.utils import make_response, map_table, make_data, get_data
 from flask_cors import cross_origin
 from flask import request
