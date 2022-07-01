@@ -49,10 +49,11 @@ class ChiTietMonHocTheoChuyenNganh(db.Model):
 class DiemTuVan(db.Model):
     __tablename__ = 'diemtuvan'
     id = db.Column(db.Integer, primary_key=True)
-    sv_id = db.Column(db.Integer, db.ForeignKey('sinhvien.id'))
+    ten_sv = db.Column(db.String(255))
+    ma_sv = db.Column(db.Integer)
     mh_id = db.Column(db.Integer, db.ForeignKey('chuongtrinhdaotao.id'))
     kdt_id = db.Column(db.Integer, db.ForeignKey('khoadaotao.id'))
-    cn_id = db.Column(db.Integer, db.ForeignKey('chuyennganh.id'))
+    # cn_id = db.Column(db.Integer, db.ForeignKey('chuyennganh.id'))
     diem = db.Column(db.Float) # lưu lịch sử điểm user đã nhập
 
 

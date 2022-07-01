@@ -1,5 +1,5 @@
 from app import app
-from app.utils import make_response, get_model, map_table, make_data
+from app.utils import make_response, map_table, make_data
 from flask_cors import cross_origin
 from flask import request
 import numpy as np

@@ -5,7 +5,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app = Flask(__name__)
-CORS(app, resources={r"*": {"origins": "https://fuzzy-c-mean-fe.vercel.app"}}) # change from '*' to this route 
+CORS(app, resources={r"*": {"origins": "*"}}) # change from '*' to this route 
+# CORS(app, resources={
+#     r"*": {
+#         "origins": [
+#             "https://fuzzy-c-mean-fe.vercel.app",
+#             "http://localhost:5502"
+#         ]}
+#     }) # change from '*' to this route 
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
