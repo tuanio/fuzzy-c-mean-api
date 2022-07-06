@@ -78,9 +78,11 @@ def get_recommend():
 @app.route('/api/authorize/<path:username>/<path:password>', methods=['GET'])
 @cross_origin()
 def authorize(username: str, password: str):
-    user = NguoiDung.query.first()
+    users = NguoiDung.query.all()
     flag = False
-    if user.username == username and user.password == password:
-        flag = True
+    for user in users:
+        if user.username == username and user.password == password:
+            flag = True
+            break
     
     return make_response(dict(is_okay=flag))
