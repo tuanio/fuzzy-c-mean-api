@@ -69,7 +69,7 @@ def get_recommend():
         for major in list_majors
     ])
 
-    distances = (distances / distances.sum() * 100).round(2).tolist()
+    distances = (100 - (distances / distances.sum() * 100).round(2)).tolist()
 
     ret = dict(zip(list_majors, distances))
 
